@@ -1,0 +1,17 @@
+spring:
+  profiles: prod
+  jpa:
+    show-sql: false
+  datasource:
+    url: 
+    username: 
+    password: 
+    driver-class-name: 
+    hikari:
+      connection-timeout: 
+      minimum-idle: 
+      maximum-pool-size: 
+      idle-timeout: 
+      max-lifetime: 
+      validation-timeout: 
+      connection-test-query: 

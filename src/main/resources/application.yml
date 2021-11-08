@@ -1,0 +1,47 @@
+server:
+    port: 8870
+
+spring:
+  application:
+    name: g1
+
+  jpa:
+    show-sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+  http:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+  datasource:
+    url: 
+    username: 
+    password: 
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 10000
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 60000
+      max-lifetime: 10000
+      validation-timeout: 10000
+      connection-test-query: select 1
+  
+
+logging:
+  level:
+    ROOT: WARN
+    org.springframework.web: INFO
+    com.rafa: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%-5p) [%t] %magenta(txn[%X{executionId}]) %cyan(%C{1}) [%M] - %m%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%t] txn[%X{executionId}] %C{1} [%M] - %m%n"
+  file:
+    name: ./logs/g1.log
+
